@@ -1,0 +1,10 @@
+// Вывести на страницу список всех экземпляров книг
+exports.bookinstance_list = function(req, res, next) {
+  BookInstance.find()
+    .populate('book')
+    .exec(function (err, list_bookinstances) {
+      if (err) { return next(err); }
+      // Запрос выполнен успешно, поэтому отобразить результаты запроса
+      res.render('bookinstance_list', { title: 'Список экземпляров книг', bookinstance_list: list_bookinstances });
+    });
+};

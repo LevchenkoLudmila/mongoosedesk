@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>mongoosedesk</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/optionbs/normaoption lize/8.0.1/normaoption lize.min.css">
+   <link rel="stylesheet" href="./styles/main.css">
+</head>
+<body>
+   <div class="grig-wrapper">
+      <div class="grid-conteiner">
+         <div class="header">
+            <header class="pageHeader">
+               <div class="logo">
+                  <img class="fit-picture" src="./public/images/4.jpg" alt="logotip">
+               </div>
+               <div class="poisk">
+                  <input type="text">
+               </div>
+            </header>
+         </div>
+         <div class="menus">
+            <nav>
+               <select class="menu" name="categoriya">
+                  <option value="">Выбрать категории</option>
+                  <optgroup label="НЕДВИЖИМОСТЬ" >
+                     <option value="1"><a href="#">Аренда квартир</a></option>
+                     <option value="2"><a href="#">Аренда комнат</a></option>
+                     <option value="3"><a href="#2">Аренда квартир</a></option>
+                     <option value="4"><a href="#3">Аренда комнат</a></option>
+                     <option value="5"><a href="#4">Аренда домов</a></option>
+                     <option value="6"><a href="#5">Аренда земли</a></option>
+                     <option value="7"><a href="#6">Аренда гаражей и стоянок</a></option>
+                     <option value="8"><a href="#7">Аренда помещений</a></option>
+                     <option value="9"><a href="#8">Ищу компаньона</a></option>
+                     <option value="10"><a href="#9">Продажа квартир</a></option>
+                     <option value="11"><a href="#10">Продажа комнат</a></option>
+                     <option value="12"><a href="#11">Продажа домов</a></option>
+                     <option value="13"><a href="#12">Продажа земли</a></option>
+                     <option value="14"><a href="#13">Продажа гаражей/ стоянок</a></option>
+                     <option value="15"><a href="#14">Продажа помещений</a></option>
+                     <option value="16"><a href="#15">Обмен недвижимости</a></option>                  
+                  </optgroup>
+                  <optgroup label="ЭЛЕКТРОНИКА">
+                     <option value="17"><a href="#16">Смартфоны</a></option>
+                     <option value="18"><a href="#17">Аксессуары для смартфонов</a></option>
+                     <option value="19"><a href="#18">Телефоны и аксессуары</a></option>
+                     <option value="20"><a href="#19">Компьютеры и комплектующие</a></option>
+                     <option value="21"><a href="#20">Ноутбуки и аксессуары</a></option>
+                     <option value="22"><a href="#21">Планшеты/ эл.книги/ аксессуары</a></option>
+                     <option value="23"><a href="#22">Фото/ видео</a></option>
+                     <option value="24"><a href="#23">Тв/ видеотехника</a></option>
+                     <option value="25"><a href="#24">Аудиотехника</a></option>
+                     <option value="26"><a href="#25">Игры и игровые приставки</a></option>
+                     <option value="27"><a href="#26">Техника для дома</a></option>
+                     <option value="28"><a href="#27">Техника для кухни</a></option>
+                     <option value="29"><a href="#28">Климатическое оборудование</a></option>
+                     <option value="30"><a href="#29">Индивидуальный уход</a></option>
+                     <option value="31"><a href="#30">Аксессуары и комплектующие</a></option>
+                     <option value="32"><a href="#31">Прочая электроника</a></option>
+                  </optgroup>
+                  <optgroup label="ХОББИ И ОТДЫХ">
+                     <option value="33"><a href="#">Книги/ журналы</a></option>
+                     <option value="34"><a href="#">Антиквариат/ коллекции</a></option>
+                     <option value="35"><a href="#">Музыкальные инструменты</a></option>
+                     <option value="36"><a href="#">CD/ DVD/ пластинки/ кассеты</a></option>
+                     <option value="37"><a href="#">Поиск попутчиков</a></option>
+                     <option value="38"><a href="#">Поиск групп/ музыкантов</a></option>
+                     <option value="39"><a href="#">Билеты</a></option>
+                     <option value="40"><a href="#">Другое</a></option>
+                  </optgroup>
+                  <optgroup label="РАБОТА ВАКАНСИИ ">
+                     <option value="41"><a href="#2">Розничная торговля/ Продажи</a></option>
+                     <option value="42"><a href="#3">Транспорт/ Логистика</a></option>
+                     <option value="43"><a href="#4">Строительство/ Архитектура</a></option>
+                     <option value="44"><a href="#5">Бухгалтерия</a></option>
+                     <option value="45"><a href="#6">Юриспруденция</a></option>
+                     <option value="46"><a href="#7">Охрана/ Безопасность</a></option>
+                     <option value="47"><a href="#8">Домашний персонал</a></option>
+                     <option value="48"><a href="#9">Красота/ Фитнес/ Спорт</a></option>
+                     <option value="49"><a href="#10">Туризм/ Отдых/ Развлечения</a></option>
+                     <option value="50"><a href="#11">Образование/ Наука/ Перевод</a></option>
+                     <option value="51"><a href="#12">Культура/ Искусство/ Музыка/ Шоу-бизнес</a></option>
+                     <option value="52"><a href="#13">Медицина/ Фармацевтика</a></option>
+                     <option value="53"><a href="#14">IТ</a></option>
+                     <option value="54"><a href="#15">Недвижимость</a></option>
+                     <option value="55"><a href="#4">Маркетинг/ Реклама/ Дизайн /PR</a></option>
+                     <option value="56"><a href="#5">Производство/ Инженеры/ Рабочие специальности</a></option>
+                     <option value="57"><a href="#6">Cекретариат/ Делопроизводство/ АХО</a></option>
+                     <option value="58"><a href="#7">Управление персоналом/ HR</a></option>
+                     <option value="59"><a href="#8">Банки/ Финансы</a></option>
+                     <option value="60"><a href="#9">Страхование</a></option>
+                     <option value="61"><a href="#10">Сервис и быт</a></option>
+                     <option value="62"><a href="#11">Телекоммуникации/ Связь</a></option>
+                     <option value="63"><a href="#12">Топ-менеджмент</a></option>
+                     <option value="64"><a href="#13">Сельское хозяйство/ Агробизнес/ Лесное хозяйство</a></option>
+                     <option value="65"><a href="#14">Работа для студентов/ Начало карьеры</a></option>
+                     <option value="66"><a href="#15">Работа за рубежом</a></option>
+                  </optgroup>
+                  <optgroup label="РАБОТА РЕЗЮМЕ">
+                     <option value="67"><a href="#2">Розничная торговля/ Продажи</a></option>
+                     <option value="68"><a href="#3">Транспорт/ Логистика</a></option>
+                     <option value="69"><a href="#4">Строительство/ Архитектура</a></option>
+                     <option value="70"><a href="#5">Бухгалтерия</a></option>
+                     <option value="71"><a href="#6">Юриспруденция</a></option>
+                     <option value="72"><a href="#7">Охрана/ Безопасность</a></option>
+                     <option value="73"><a href="#8">Домашний персонал</a></option>
+                     <option value="74"><a href="#9">Красота/ Фитнес/ Спорт</a></option>
+                     <option value="75"><a href="#10">Туризм/ Отдых/ Развлечения</a></option>
+                     <option value="76"><a href="#11">Образование/ Наука/ Перевод</a></option>
+                     <option value="77"><a href="#12">Культура/ Искусство/ Музыка/ Шоу-бизнес</a></option>
+                     <option value="78"><a href="#13">Медицина/ Фармацевтика</a></option>
+                     <option value="79"><a href="#14">IТ</a></option>
+                     <option value="80"><a href="#15">Недвижимость</a></option>
+                     <option value="81"><a href="#4">Маркетинг/ Реклама/ Дизайн /PR</a></option>
+                     <option value="82"><a href="#5">Производство/ Инженеры/ Рабочие специальности</a></option>
+                     <option value="83"><a href="#6">Cекретариат/ Делопроизводство/ АХО</a></option>
+                     <option value="84"><a href="#7">Управление персоналом/ HR</a></option>
+                     <option value="85"><a href="#8">Банки/ Финансы</a></option>
+                     <option value="86"><a href="#9">Страхование</a></option>
+                     <option value="87"><a href="#10">Сервис и быт</a></option>
+                     <option value="88"><a href="#11">Телекоммуникации/ Связь</a></option>
+                     <option value="89"><a href="#12">Топ-менеджмент</a></option>
+                     <option value="90"><a href="#13">Сельское хозяйство/ Агробизнес/ Лесное хозяйство</a></option>
+                     <option value="91"><a href="#14">Работа для студентов/ Начало карьеры</a></option>
+                     <option value="92"><a href="#15">Работа за рубежом</a></option>
+                     <option value="93"><a href="#15">Другие сферы занятий</a></option>
+                  </optgroup>
+                  <optgroup label="ТРАНСПОРТ">
+                     <option value="94"><a href="#2">Легковые автомобили</a></option>
+                     <option value="95"><a href="#3">Мото</a></option>
+                     <option value="96"><a href="#4">Автобусы</a></option>
+                     <option value="97"><a href="#5">Спецтехника</a></option>
+                     <option value="98"><a href="#6">Грузовые автомобили</a></option>
+                     <option value="99"><a href="#7">Сельхозтехника</a></option>
+                     <option value="100"><a href="#8">Водный транспорт</a></option>
+                     <option value="101"><a href="#9">Воздушный транспорт</a></option>
+                     <option value="102"><a href="#10">Запчасти/ аксессуары</a></option>
+                     <option value="103"><a href="#11">Прицепы</a></option>
+                     <option value="104"><a href="#12">Другой транспорт</a></option>
+                  </optgroup>
+                  <optgroup label="ЖИВОТНЫЕ">
+                     <option value="105"><a href="#2">Собаки</a></option>
+                     <option value="106"><a href="#3">Кошки</a></option>
+                     <option value="107"><a href="#4">Аквариумистика</a></option>
+                     <option value="108"><a href="#5">Птицы</a></option>
+                     <option value="109"><a href="#6">Грызуны</a></option>
+                     <option value="110"><a href="#7">Рептилии</a></option>
+                     <option value="111"><a href="#8">Сельхоз животные</a></option>
+                     <option value="112"><a href="#9">Животные даром</a></option>
+                     <option value="113"><a href="#10">Зоотовары</a></option>
+                     <option value="114"><a href="#11">Вязка</a></option>
+                     <option value="115"><a href="#12">Бюро находок</a></option>
+                     <option value="116"><a href="#13">Другие животные</a></option>
+                  </optgroup>
+                  <optgroup label="ДЕТСКИЙ МИР">
+                     <option value="117"><a href="#2">Детская одежда</a></option>
+                     <option value="118"><a href="#3">Детская обувь</a></option>
+                     <option value="119"><a href="#4">Детские коляски</a></option>
+                     <option value="120"><a href="#5">Детские автокресла</a></option>
+                     <option value="121"><a href="#6">Детская мебель</a></option>
+                     <option value="122"><a href="#7">Игрушки</a></option>
+                     <option value="123"><a href="#8">Детский транспорт</a></option>
+                     <option value="124"><a href="#9">Товары для кормления</a></option>
+                     <option value="125"><a href="#10">Товары для школьников</a></option>
+                     <option value="126"><a href="#11">Другие детские товары</a></option>
+                  </optgroup>
+                  <optgroup label="БИЗНЕС И УСЛУГИ">
+                     <option value="127"><a href="#">Строительство/ ремонт/ уборка</a></option>
+                     <option value="128"><a href="#">Финансовые услуги/ партнерство</a></option>
+                     <option value="129"><a href="#">Перевозки/ аренда транспорта</a></option>
+                     <option value="130"><a href="#">Реклама/ полиграфия/ маркетинг/ интернет</a></option>
+                     <option value="131"><a href="#">Продажа бизнеса</a></option>
+                     <option value="132"><a href="#">Развлечения/ Искусство/ Фото/ Видео</a></option>
+                     <option value="133"><a href="#">Туризм/ иммиграция</a></option>
+                     <option value="134"><a href="#">Услуги переводчиков/ набор текста</a></option>
+                     <option value="135"><a href="#">Авто/ мото услуги</a></option>
+                     <option value="136"><a href="#">Обслуживание, ремонт техники</a></option>
+                     <option value="137"><a href="#">Сетевой маркетинг</a></option>
+                     <option value="138"><a href="#">Юридические услуги</a></option>
+                     <option value="139"><a href="#">Прокат товаров</a></option>
+                     <option value="140"><a href="#">Няни/ сиделки</a></option>
+                     <option value="141"><a href="#">Красота/ здоровье</a></option>
+                     <option value="142"><a href="#">Оборудование</a></option>
+                     <option value="143"><a href="#">Образование/ Спорт</a></option>
+                     <option value="144"><a href="#">Услуги для животных</a></option>
+                     <option value="145"><a href="#">Прочие услуги</a></option>
+                  </optgroup>
+                  <optgroup label="МОДА И СТИЛЬ">
+                     <option value="146"><a href="#2">Одежда/ обувь</a></option>
+                     <option value="147"><a href="#3">Для свадьбы</a></option>
+                     <option value="148"><a href="#4">Наручные часы</a></option>
+                     <option value="149"><a href="#5">Аксессуары</a></option>
+                     <option value="150"><a href="#6">Подарки</a></option>
+                     <option value="151"><a href="#7">Красота/ здоровье</a></option>
+                     <option value="152"><a href="#8">Мода разное</a></option>
+                  </optgroup>   
+                  <optgroup label="ДОМ И САД">
+                     <option value="153"><a href="#2">Канцтовары/ расходные материалы</a></option>
+                     <option value="154"><a href="#3">Мебель</a></option>
+                     <option value="155"><a href="#4">Продукты питания/ напитки</a></option>
+                     <option value="156"><a href="#5">Сад/ огород</a></option>
+                     <option value="157"><a href="#6">Предметы интерьера</a></option>
+                     <option value="158"><a href="#7">Строительство/ ремонт</a></option>
+                     <option value="159"><a href="#8">Инструменты</a></option>
+                     <option value="160"><a href="#9">Комнатные растения</a></option>
+                     <option value="161"><a href="#10">Посуда/ кухонная утварь</a></option>
+                     <option value="162"><a href="#11">Садовый инвентарь</a></option>
+                     <option value="163"><a href="#12">Хоз. инвентарь/ бытовая химия</a></option>
+                     <option value="164"><a href="#13">Другие товары для дом</a></option>
+                  </optgroup>
+                  <optgroup label="ВЗАИМОПОМОЩЬ">
+                  </optgroup>
+                  <optgroup label="ОБМЕН">
+                  </optgroup>
+                  <optgroup label="СКИДКИ">
+                  </optgroup>
+               </select>
+            </nav>
+         </div>
+         <div class="artic">
+            <article class="article">
+               <h2>Article</h2>
+               <div>
+                  <form>
+                     <div>
+                        <input type="text">
+                        <input type="button">
+                     </div>
+                  </form>
+               </div>
+            </article>
+         </div>
+         <div class="cluch_slova">
+            <h2>cluch slova</h2>
+            <div class="out">
+         </div>
+         <div class="pageFooter">
+            <footer >
+               <div>
+                  Footer
+               </div>
+            </footer>
+         </div>
+      </div>
+   </div>
+</body>
+</html>

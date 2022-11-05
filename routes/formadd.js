@@ -1,5 +1,10 @@
 const express = require('express');
 const router = express.Router();
+
+router.get('/formadd', (req, res) => {
+   res.render('formadd');
+});
+
 // const ArticleModel = require('./models/article');
 // //запись в бд из формы
 // router.get('/', async (req, res, next) => {

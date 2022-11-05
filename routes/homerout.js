@@ -5,11 +5,9 @@ const router = express.Router();
 //    console.log('hy bebi');
 // }); 
 
-// router.get('/', (req, res) => {
-//    res.render('index');
-// });
 router.get('/', (req, res) => {
-   res.render('formadd');
+   res.render('index');
 });
+
 
 module.exports = router;

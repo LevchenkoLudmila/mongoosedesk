@@ -10,7 +10,7 @@
 </head>
 <body>
    <div class="grig-wrapper">
-      <div class="grid-conteiner">
+      <div class="grid-conteiner grid_article">
          <div class="header">
             <header class="pageHeader">
                <div class="logo">
@@ -224,19 +224,27 @@
             <article class="article">
                <h2>Article</h2>
                <div>
-                  <form>
-                     <div>
-                        <input type="text">
-                        <input type="button">
-                     </div>
-                  </form>
+                  <header class="headers_elect_card_categori">
+                     <button class="button button_color_all" data-filter="all">all</button>
+                     <button class="button button_color_cat" data-filter="cat">cat</button>
+                     <button class="button button_color_dog" data-filter="dog">dog</button>
+                     <button class="button button_color_bird" data-filter="bird">bird</button>
+                  </header>
+                  <div class="conteiner_card_categori">
+                     <div class="card cat">cat</div>
+                     <div class="card dog">dog</div>
+                     <div class="card bird">bird</div>
+                     <div class="card cat">cat</div>
+                     <div class="card dog">dog</div>
+                     <div class="card dog">dog</div>
+                     <div class="card cat">cat</div>
+                     <div class="card bird">bird</div>
+                     <div class="card bird">bird</div>
+                  </div>
                </div>
             </article>
          </div>
-         <div class="cluch_slova">
-            <h2>cluch slova</h2>
-            <div class="out">
-         </div>
+         
          <div class="pageFooter">
             <footer >
                <div>
@@ -246,5 +254,6 @@
          </div>
       </div>
    </div>
+   <script src="/public/js/main.js"></script>
 </body>
 </html>

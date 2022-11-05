@@ -41,7 +41,10 @@ server.post('/', async (req, res) => {
    console.log(bookList);
    res.send(JSON.stringify(bookList));
 });
+//server.post('/', async (req, res) => {
 
+//    console.log(req.body);
+// });
 // server.get('/comment', async (req, res) => {
 //    const bookList = await BookModel.find({},'name').exec();
 //    res.send(JSON.stringify(bookList));

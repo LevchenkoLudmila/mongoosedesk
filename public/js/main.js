@@ -25,10 +25,19 @@ function app() {
 app();
 
       
+// const formEl = document.forms.testForm;
+// formEl.addEventListener('submit', async (ev) => {
+//    ev.preventDefault();
+//    const formdata = new FormData(ev.target);
+//    formdata.append("name", name);
+//    const { data } = await axios.post('/upload1', formdata);
+// });
 const formEl = document.forms.testForm;
-formEl.addEventListener('submit', async (ev) => {
+console.log(formEl);
+formEl.addEventListener('click', async (ev) => { //либо submit
    ev.preventDefault();
    const formdata = new FormData(ev.target);
+   console.log(ev.target);
    formdata.append("name", name);
    const { data } = await axios.post('/upload1', formdata);
 });

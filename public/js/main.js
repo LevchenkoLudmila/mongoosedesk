@@ -34,7 +34,7 @@ app();
 // });
 const formEl = document.forms.testForm;
 console.log(formEl);
-formEl.addEventListener('click', async (ev) => { //либо submit
+formEl.addEventListener('submit', async (ev) => {
    ev.preventDefault();
    const formdata = new FormData(ev.target);
    console.log(ev.target);

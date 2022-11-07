@@ -7,7 +7,7 @@ router.get('/formadd', (req, res) => {
 
 // const ArticleModel = require('./models/article');
 // //запись в бд из формы
-// router.get('/', async (req, res, next) => {
+// router.post('/', async (req, res, next) => {
 //    const model = new ArticleModel({
 //       zagolovki: '',
 //       keywords:'',
@@ -22,4 +22,5 @@ router.get('/formadd', (req, res) => {
 // router.get('/', async (req, res, next) => {
 //    const doc = await ArticleModel.find();
 // });
+
 module.exports = router;

@@ -6,9 +6,9 @@ const generalSchema = new Schema({
       type: Schema.Types.String,
       minLength: 2,
    },
-   autor: { 
-      type: Schema.Types.String,
-      minLength: 2,
+   autorId:  { 
+      type: Schema.Types.ObjectId,
+      ref: 'autor'
    },
    articleId:  { 
       type: Schema.Types.ObjectId,

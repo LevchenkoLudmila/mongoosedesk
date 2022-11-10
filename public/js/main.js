@@ -1,3 +1,4 @@
+//filter card
 function app() {
    const buttons = document.querySelectorAll('.button');
    const cards = document.querySelectorAll('.card');
@@ -20,11 +21,12 @@ function app() {
          filter(currentCategory, cards);
    });
  });
-}
+};
 
 app();
 
-      
+
+
 // const formEl = document.forms.testForm;
 // formEl.addEventListener('submit', async (ev) => {
 //    ev.preventDefault();
@@ -32,12 +34,22 @@ app();
 //    formdata.append("name", name);
 //    const { data } = await axios.post('/upload1', formdata);
 // });
-const formEl = document.forms.testForm;
+const formEl = document.forms.objavaForm;
 console.log(formEl);
+
 formEl.addEventListener('submit', async (ev) => {
    ev.preventDefault();
-   const formdata = new FormData(ev.target);
+   const formData = new FormData(ev.target);
    console.log(ev.target);
-   formdata.append("name", name);
-   const { data } = await axios.post('/upload1', formdata);
+//    formdata.append("name", name);
+   const { data } = await axios.post('/uploads', formData);
+   console.log(data);
 });
+
+// // сброс значений формы
+// const btnFormReset = document.getElementsByName("reset");
+// console.log(btnFormReset);
+// btnFormReset.addEventListener('click',(ev) => {
+//    ev.preventDefault();
+//    reset();
+// }); 

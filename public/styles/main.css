@@ -3,9 +3,10 @@ body {
 	font-family: Helvetica;
    background-color:#b4c1c9;
 }
-*div{
-   border: #0e0e0e 1px solid;
+body div{
+   border: #e71b1b 1px solid;
 }
+
 .wrapper { /* border: 2px solid blue; */
 	max-width: 96vw;
 	margin: auto;
@@ -23,6 +24,24 @@ header {
    align-items: center;
    flex-wrap: wrap;
  }
+ .my_nav ul {
+   display: -webkit-flex; 
+   display: flex;
+   list-style: none; 
+   margin: 0 auto;
+   background: #494744;
+   padding-left: 0;
+ }
+ .my_nav a {
+   padding: 1em;
+   display: block;
+   color: #f0dede;
+   border-right: 1px solid #97938f;
+   background: rgba(73, 71, 68, 0.3);
+   text-decoration: none;
+   transition: .5s linear;
+ }
+ .my_nav a:hover {background: #7a7876}
 
  .header-form{
       display: flex;
@@ -53,8 +72,8 @@ header {
    display: grid;
    grid-template: 
       [start]"header header" 50px [row2]
-      [row2]"menus menus" 100px [row3]
-      [row3]"artic cluch" 950px [row4]
+      [row2]"menus menus" 50px [row3]
+      [row3]"artic cluch" 900px [row4]
       [row4]"footer footer"150px [row-end]/ 2fr 1fr
       ;
   /* grid-template-columns: 200px 200px;
@@ -279,22 +298,27 @@ nav > optgroup > option {
    margin-right: 0;
 }
 
+wrapp-card-obj
+card-obj-img
+card-obj-title
+card-obj-reiting
+
 .conteiner_card_categori {
    display: flex;
    flex-wrap: wrap;
-   max-width:  600px;
+   max-width:  800px;
    margin: 0 auto;
    font-size: 0;  
 }
 
 .card {
-   width: calc(33.333333% - 72px);
-   min-height: 200px;
-   line-height: 200px;
-   font-size: 48px;
+   width: 90%;
+   min-height: 100px;
+   /*line-height: 200px;*/
+   font-size: 16px;
    color: #ffffff;
    font-weight: bold;
-   margin: 36px;
+   margin: 10px;
    text-align: center;
    overflow: hidden;
    transition: 0.5s all;
@@ -304,20 +328,6 @@ nav > optgroup > option {
    display: none;
 }
 
-@keyframes hide {
-   0% {
-      visibility: visible;
-      height: 200px;
-      min-height: 0;
-   }
-   100%{
-      visibility: visible;
-      width: 200px;
-      height: 0;
-      margin: 0;
-      font-size: 0;
-   }
-}
  @keyframes 
    menu {
    0% {
@@ -328,4 +338,19 @@ nav > optgroup > option {
       opacity: 1; 
       transform: rotateY(0deg) translateY(0px);
    }
- }
+}
+
+@keyframes hide {
+   0% {
+      visibility: visible;
+      height: 200px;
+      min-height: 0;
+   }
+   100% {
+      visibility: visible;
+      width: 200px;
+      height: 0;
+      margin: 0;
+      font-size: 0;
+   }
+}

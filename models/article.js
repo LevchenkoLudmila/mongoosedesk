@@ -2,9 +2,11 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const generalSchema = new Schema({
-   zagolovki: { 
+   zagolovok: { 
       type: Schema.Types.String,
       minLength: 3,
+      required: true,
+      unique: true,
    },
    keywords: { 
       type: Schema.Types.String,
@@ -12,7 +14,7 @@ const generalSchema = new Schema({
    },
    article: { 
       type: Schema.Types.String,
-      minLength: 2,
+      minLength: 5,
    },
    autor: { 
       type: Schema.Types.String,
@@ -20,7 +22,11 @@ const generalSchema = new Schema({
    },
    rating: { 
       type: Schema.Types.Number,
-      min: 2,
+      min: 1,
+   },
+   price: { 
+      type: Schema.Types.Number,
+      min: 1,
    },
    createAt: {
       type: Schema.Types.Date,
@@ -31,6 +37,10 @@ const generalSchema = new Schema({
       type: Schema.Types.ObjectId,
       ref: 'comment',
    }],
+   autorId: { 
+      type: Schema.Types.ObjectId,
+      ref: 'autor',
+   },
 });
 
 const model = mongoose.model('Article', generalSchema);

@@ -5,7 +5,7 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>mongoosedesk</title>
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/optionbs/normaoption lize/8.0.1/normaoption lize.min.css">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.3/axios.min.js" integrity="sha512-0qU9M9jfqPw6FKkPafM3gy2CBAvUWnYVOfNPDYKVuRTel1PrciTj+a9P3loJB+j0QmN2Y0JYQmkBBS8W+mbezg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
    <link rel="stylesheet" href="./styles/main.css">
 </head>
 <body>
@@ -15,10 +15,15 @@
             <div class="header">
                <header class="pageHeader">
                   <div class="logo">
-                     <img class="fit-picture" src="./public/images/4.jpg" alt="Твой каприз">
+                     <img class="fit-picture" src="./images/4.jpg" alt="Твой каприз">
                   </div>
                   <div class="poisk">
-                     <input type="text">
+                     <div class="my_nav">
+                        <ul>
+                          <li><a href="http://localhost:3000/">Главная</a></li>
+                          <li><a href="http://localhost:3000/article">Статья</a></li>
+                        </ul>
+                     </div>
                   </div>
                </header>
             </div>
@@ -222,33 +227,43 @@
                </nav>
             </div>
             <div class="artic">
-                  <h2>Form obyavleniya</h2>
+                  <h1>Форма объявления </h1>
                   <div>
-                     <form method="post" enctype="multipart/form-data" action="/upload" name="testForm">
-                        <div>
-                           <h1>Объявление</h1>
-                           <div>
-                              <h4>Заголовок</h4>
+                     <form method="post" enctype="multipart/form-data" action="/uploads" name="objavaForm">
+                           <h4>Заголовок:</h4> 
                               <input type="text" name="zagolovok">
                            </div>
                            <div>
-                              <h4>Ключевое слово</h4>
+                              <h4>Ключевое слово:</h4>
                               <input type="text" name="keywords">
                            </div>
                            <div>
-                              <h4>Фото</h4>
+                              <h4>Фото:</h4>
                               <input type="file" name="filedata1">
                            </div>
                            <div>
-                              <h4>Текст объявления</h4>
+                              <h4>Текст объявления:</h4>
                               <textarea name="text-aticle"></textarea>
                            </div>
                            <div>
-                              <h4>Автор</h4>
+                              <h4>Автор:</h4>
                               <input type="text" name="autor">
                            </div>
                            <div>
-                              <input type="submit" value="Submit">
+                              <h4>Телефон:</h4>
+                              <input type="tel" name="telefon">
+                           </div>
+                           <div>
+                              <h4>E-mail:</h4>
+                              <input type="tel" name="email">
+                           </div>
+                           <div>
+                              <h4>Стоимость:</h4>
+                              <input type="text" name="price">
+                           </div>
+                           <div>
+                              <input type="submit" value="Submit" name="btnsubmit_objavaForm">
+                              <input type="button" name="reset_form" value="Reset Form" name="btnreset_objavaForm">
                            </div>
                         </div>
                      </form>

@@ -3,7 +3,7 @@ const router = express.Router();
 const ArticleModel = require('../models/article');
 
 router.get('/', async (req, res) => {
-   const articles = await ArticleModel.find({});
+   // const articles = await ArticleModel.find({});
    res.render('index');
    
 });

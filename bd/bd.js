@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 //строка коннекта к бд
-const uri = 'mongodb://localhost:27017/mongoosedesk';
+const uri = 'mongodb://localhost:27017/mdesk';
 const options = {
    useNewUrlParser: true,
    useUnifiedTopology: true

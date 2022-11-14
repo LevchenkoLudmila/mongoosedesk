@@ -6,19 +6,15 @@ const generalSchema = new Schema({
       type: Schema.Types.String,
       minLength: 3,
       required: true,
-      unique: true,
    },
    keywords: { 
       type: Schema.Types.String,
       minLength: 3,
+      unique: true,
    },
    article: { 
       type: Schema.Types.String,
       minLength: 5,
-   },
-   autor: { 
-      type: Schema.Types.String,
-      minLength: 2,
    },
    rating: { 
       type: Schema.Types.Number,

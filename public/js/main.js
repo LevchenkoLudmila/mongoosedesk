@@ -25,17 +25,9 @@ function app() {
 
 app();
 
-
-
-// const formEl = document.forms.testForm;
-// formEl.addEventListener('submit', async (ev) => {
-//    ev.preventDefault();
-//    const formdata = new FormData(ev.target);
-//    formdata.append("name", name);
-//    const { data } = await axios.post('/upload1', formdata);
-// });
+const zagruzkaform = () =>{
 const formEl = document.forms.objavaForm;
-console.log(formEl);
+   console.log(formEl);
 
 formEl.addEventListener('submit', async (ev) => {
    ev.preventDefault();
@@ -43,9 +35,9 @@ formEl.addEventListener('submit', async (ev) => {
    console.log(ev.target);
 //    formdata.append("name", name);
    const { data } = await axios.post('/uploads', formData);
-   console.log(data);
-});
-
+})
+const elContent = document.querySelector('.');
+}
 // // сброс значений формы
 // const btnFormReset = document.getElementsByName("reset");
 // console.log(btnFormReset);

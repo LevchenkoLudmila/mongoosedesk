@@ -34,7 +34,7 @@ formEl.addEventListener('submit', async (ev) => {
    ev.preventDefault();
    const formData = new FormData(ev.target);
    
-   const { data } = await axios.post('/formadd/uploads', formData);
+   const { data } = await axios.post('/uploads', formData);
    console.log('data objavaForm front:', data);
 })
 //const elContent = document.querySelector('.');

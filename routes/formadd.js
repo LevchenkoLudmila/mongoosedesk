@@ -77,7 +77,7 @@ router.post('/uploads', upload.none(), async (req, res, next) => {
 
    res.json(articles);
 
-  
+
 });
 
 module.exports = router;

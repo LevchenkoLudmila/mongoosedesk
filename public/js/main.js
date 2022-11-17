@@ -1,32 +1,33 @@
 //filter card
-function app() {
-   const buttons = document.querySelectorAll('.button');
-   const cards = document.querySelectorAll('.card');
+// function app() {
+//    const buttons = document.querySelectorAll('.button');
+//    const cards = document.querySelectorAll('.card');
 
-   function filter (category, items) {
-      items.forEach((item) => {
-         const isItemFiltered = !item.classList.contains(category);
-         const isShowAll = category.toLowerCase() === 'all'
-         if(isItemFiltered && !isShowAll) {
-            item.classList.add('hide');
-         } else {
-            item.classList.remove('hide');
-         }
-      });
-   }
+//    function filter (category, items) {
+//       items.forEach((item) => {
+//          const isItemFiltered = !item.classList.contains(category);
+//          const isShowAll = category.toLowerCase() === 'all'
+//          if(isItemFiltered && !isShowAll) {
+//             item.classList.add('hide');
+//          } else {
+//             item.classList.remove('hide');
+//          }
+//       });
+//    }
 
-   buttons.forEach((button) => {
-      button.addEventListener('click', () => {
-         const currentCategory = button.dataset.filter;
-         filter(currentCategory, cards);
-   });
- });
-};
+//    buttons.forEach((button) => {
+//       button.addEventListener('click', () => {
+//          const currentCategory = button.dataset.filter;
+//          filter(currentCategory, cards);
+//    });
+//  });
+// };
 
-app();
+// app();
 
-//загрузка формы objavaForm
-const zagruzkaform = () =>{
+//-------загрузка формы objavaForm
+
+const zagruzka = async () =>{
 const formEl = document.forms.objavaForm;
    // console.log(formEl);
 
@@ -41,6 +42,13 @@ formEl.addEventListener('submit', async (ev) => {
 };
 
 
+const articles = async () => {
+   const { data } = await axios.post('/articless'); //все статьи
+   console.log('data articlesfront:', data);
+   return data;
+};
+
+articles();
 // const articles = async () => {
 //    const { data } = await axios.post('/formadd/uploads'); //все статьи
 //    console.log('data', data);
@@ -57,15 +65,15 @@ formEl.addEventListener('submit', async (ev) => {
 // }); 
 
 //счетчик лайков
-const dislike = document.querySelector();
-const like = document.querySelector();
-dislike.addEventListener('click', (event) => {
-   if (event.target.dataset.counter != undefined) { // если есть атрибут...
-     event.target.value++;
-   }
- });
-like.addEventListener('click', (event) => {
-   if (event.target.dataset.counter != undefined) { // если есть атрибут...
-     event.target.value++;
-   }
- });
+// const dislike = document.querySelector();
+// const like = document.querySelector();
+// dislike.addEventListener('click', (event) => {
+//    if (event.target.dataset.counter != undefined) { // если есть атрибут...
+//      event.target.value++;
+//    }
+//  });
+// like.addEventListener('click', (event) => {
+//    if (event.target.dataset.counter != undefined) { // если есть атрибут...
+//      event.target.value++;
+//    }
+//  });

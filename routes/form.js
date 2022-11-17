@@ -1,10 +1,11 @@
 const express = require('express');
 const router = express.Router();
+const db = require('../bd/bd');
 const multer  = require("multer");
 const path = require('path');
+
 const ArticleModel = require('../models/article');
 
-//
 const storage = multer.diskStorage({
    destination: (req, file, cb) => {
       cb(null, path.join(__dirname, '../public/uploads/'));
@@ -13,6 +14,7 @@ const storage = multer.diskStorage({
       cb(null, file.originalname + '-' + Date.now());
    }
 });
+
 //фильтр для мультера
 const fileFilter = (req, file, cb) => {
   
@@ -32,11 +34,6 @@ const fileFilter = (req, file, cb) => {
 //---------аплоад мультера------//
 const upload = multer({ storage: storage, limits: { fileSize: 1024 * 1024 * 5}, fileFilter: fileFilter });
 
-//пoиск в бд
-// router.get('/', async (req, res, next) => {
-//    const doc = await ArticleModel.find();
-//    // res.render();
-// });
 
 //--------отдать форму еджс---------//
 router.get('/form', (req, res) => {
@@ -45,39 +42,28 @@ router.get('/form', (req, res) => {
 
 //---------- из формы-----------//
 router.post('/uploads', upload.none(), async (req, res, next) => {
-   const { zagolovok, keywords, content, price } = req.body;
-   //загрузка файла
-   // let filedata = req.file;
-   // if(!filedata)
-   //     res.send("Ошибка при загрузке файла");
-   // else
-   //     res.send("Файл загружен");
+   
+   //const { zagolovok, keywords, content, price } = req.body;
 
-   const init = async () => {
-      const doc = await ArticleModel.create({
-         zagolovok: zagolovok,
-         keywords: keywords,
-         article: content,
-         price: price
-      }); 
-   }   
-
-   init();
-
-   const articles = async () => {
-      const doc = await ArticleModel.find({}); //все статьи
-      console.log('doc:', doc);
-      return doc;
-   };
-
-   articles();
-
+   // const init = async () => {
+   //    const doc = await ArticleModel.create({
+   //       zagolovok: zagolovok,
+   //       keywords: keywords,
+   //       article: content,
+   //       price: price,
+   //    }); 
+   // }   
+   // init();
+   
    console.log('запись в роуте forma add в модель артикл');
-   console.log('formaddrouter work')
-
-   res.json(articles);
-
-
+   console.log('formaddrouter work');
+   
 });
+
+router.post('articles', async(req,res) =>{
+   const doc = await ArticleModel.find({zagolovok: 'Недвижимость'}).exe(); //все статьи
+   console.log('doc:', doc);
+   res.json(doc);
+})
 
 module.exports = router;

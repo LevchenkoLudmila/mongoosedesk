@@ -3,7 +3,7 @@ const express = require('express');
 //роуты
 const homeRoutes = require('./routes/homerout');
 const newArticleRoutes = require('./routes/articlerout');
-const formAddRoutes = require('./routes/formadd');
+const formAddRoutes = require('./routes/form');
 
 //server///
 const server = express();

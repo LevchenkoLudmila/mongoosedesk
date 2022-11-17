@@ -5,12 +5,10 @@ const generalSchema = new Schema({
    zagolovok: { 
       type: Schema.Types.String,
       minLength: 3,
-      required: true,
    },
    keywords: { 
       type: Schema.Types.String,
       minLength: 3,
-      unique: true,
    },
    article: { 
       type: Schema.Types.String,

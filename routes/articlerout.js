@@ -9,20 +9,20 @@ router.get('/articles', (req, res) => {
    res.render('articles');
 });
 
-router.post('/article', async(req, res) => {
+// router.post('/article', async(req, res) => {
 
-   const articles = async () => {
-      const doc = await ArticleModel.find({}); //все статьи
-      console.log('doc:', doc);
-      return doc;
-   };
+//    const articles = async () => {
+//       const doc = await ArticleModel.find({}); //все статьи
+//       console.log('doc:', doc);
+//       return doc;
+//    };
 
-   articles();
+//    articles();
 
    
 
-   res.render('article',  {articles: articles});
-});
+//    res.render('article',  {articles: articles});
+// });
 // ---------для фото-------//
 // router.get('/upload', (req, res) => {
 //    imgModel.find({}, (err, items) => {
@@ -36,10 +36,10 @@ router.post('/article', async(req, res) => {
 //    });
 // });
 // app.post('/upload', upload.single('previw'), (req, res, next) => {
- 
+//    const { name, desc } = req.body
 //    const obj = {
-//        name: req.body.name,
-//        desc: req.body.desc,
+//        name: name,
+//        desc: desc,
 //        img: {
 //            data: fs.readFileSync(path.join(__dirname + '/uploads/' + req.file.filename)),
 //            contentType: 'image/png'

@@ -9,56 +9,10 @@
 </head>
 <body>
    <div class="wrapper">
-      <div class="header">
-         <div class="navbar">
-            <a href="http://localhost:3000/">Главная</a>
-            <a href="http://localhost:3000/articles">Статьи</a>
-            <div class="dropdown">
-              <button class="dropbtn">Категории
-                <i class="fa fa-caret-down"></i>
-              </button>
-              <div class="dropdown-content">
-                <div class="header">
-                  <h2>Выбрать категорию</h2>
-                </div>
-                <div class="row">
-                  <div class="column">
-                    <h3>НЕДВИЖИМОСТЬ</h3>
-                    <a href="#">Аренда</a>
-                    <a href="#">Продажа</a>
-                    <a href="#">Обмен</a>
-                    <a href="#">Ищу компаньона</a>
-                  </div>
-                  <div class="column">
-                    <h3>ХОББИ И ОТДЫХ</h3>
-                    <a href="#">Книги/ журналы</a>
-                    <a href="#">Поиск попутчиков</a>
-                    <a href="#">Билеты</a>
-                    <a href="#">Другое</a>
-                  </div>
-                  <div class="column">
-                    <h3>ЖИВОТНЫЕ</h3>
-                    <a href="#">Животные даром</a>
-                    <a href="#">Другие животные</a>
-                    <a href="#">Зоотовары</a>
-                  </div>
-                  <div class="column">
-                     <h3>Взаиморомощь</h3>
-                  </div>
-               </div>
-              </div>
-            </div>
-          </div>
-         
-         <div class="menu">
-            <div class="logo">
-               <a href="http://localhost:3001/">
-                  <p>Твой каприз</p>
-               </a>
-            </div>
-         </div>
-      </div>
+      <header><%- include('./header') %></header>
+
       <div class="blok">
+
          <div class="form">
             <div class="artic">
                <h1>
@@ -68,42 +22,45 @@
                   <form method="post" enctype="multipart/form-data" action="/uploads" name="objavaForm">
                      <div>
                         <h4>Заголовок:</h4> 
-                        <input type="text" name="zagolovok">
+                        <input type="text" required name="zagolovok">
                      </div>
                      <div>
                         <h4>Ключевое слово:</h4>
-                        <input type="text" name="keywords">
+                        <input type="text" required name="keywords">
                      </div>
                      <div>
                         <h4>Текст объявления:</h4>
-                        <textarea name="content" placeholder="content"></textarea>
+                        <textarea name="content"  placeholder="Текст объявления"></textarea>
                      </div>
                      <div>
                         <h4>Автор:</h4>
-                        <input type="text" name="autor">
+                        <input type="text" required name="autor">
                      </div>
                      <div>
                         <h4>Телефон:</h4>
-                        <input type="tel" name="telefon">
+                        <input type="tel" required name="telefon">
                      </div>
                      <div>
                         <h4>E-mail:</h4>
-                        <input type="tel" name="email">
+                        <input type="email" required name="email">
                      </div>
                      <div>
                         <h4>Стоимость:</h4>
-                        <input type="text" name="price">
+                        <input type="number" required name="price">
                      </div>
                      <div>
-                        <input type="submit" value="Submit" name="btnsubmit_objavaForm">
+                        <input type="submit" value="Записать" name="btnsubmit_objavaForm">
                         <input type="button" name="reset_form" value="Reset Form" name="btnreset_objavaForm">
                      </div>
                   </form>
                </div>
             </div>
          </div>
+
       </div>
-      <div class="footer"></div>
+
+      <footer><%- include ('./footer') %></footer>
+
    </div>
    <script src="./js/main.js"></script>
 </body>

@@ -2,15 +2,16 @@ const express = require('express');
 const router = express.Router();
 const ArticleModel = require('../models/article');
 
+
 router.get('/', async (req, res) => {
    // const articles = await ArticleModel.find({});
    res.render('index');
    
 });
 
-// router.post('/', (req, res, next) => {
-//    console.log('hy bebi');
-// }); 
+router.post('/', (req, res, next) => {
+   
+}); 
 
 
 
@@ -18,10 +19,6 @@ router.get('/', async (req, res) => {
 //    const bookList = await BookModel.find({},).populate('ganre');
 //    console.log(bookList);
 //    res.send(JSON.stringify(bookList));
-// });
-//server.post('/', async (req, res) => {
-
-//    console.log(req.body);
 // });
 // server.get('/comment', async (req, res) => {
 //    const bookList = await BookModel.find({},'name').exec();
@@ -86,7 +83,6 @@ router.get('/', async (req, res) => {
 //    const doc = await BookModel.create({
 //       name: req.body.bookname,
 //       ganre: ganrId,
-//       comment:[],
 //    });
 //    console.log(doc);
 //    console.log(docGanre);

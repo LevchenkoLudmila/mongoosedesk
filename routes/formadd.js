@@ -3,7 +3,6 @@ const router = express.Router();
 const multer  = require("multer");
 const path = require('path');
 const ArticleModel = require('../models/article');
-const ImageModel = require('../models/image');
 
 //
 const storage = multer.diskStorage({
@@ -30,62 +29,55 @@ const fileFilter = (req, file, cb) => {
 //const uploadImage = upload.single('image');
 // app.use(multer({storage:storageConfig}).single("filedata"));
 
-//аплоад мультера
-const upload = multer({
-   storage: storage,
-   limits: { fileSize: 1024 * 1024 * 5},
-   fileFilter: fileFilter
-});
+//---------аплоад мультера------//
+const upload = multer({ storage: storage, limits: { fileSize: 1024 * 1024 * 5}, fileFilter: fileFilter });
 
 //пoиск в бд
 // router.get('/', async (req, res, next) => {
 //    const doc = await ArticleModel.find();
-//    // res.render
+//    // res.render();
 // });
 
-//отдать форму еджс
+//--------отдать форму еджс---------//
 router.get('/form', (req, res) => {
    res.render('form');
 });
 
-
-//  из формы
-router.post('/uploads', upload.single('previw'), async (req, res, next) => {
-
-   let filedata = req.file;
-   if(!filedata)
-       res.send("Ошибка при загрузке файла");
-   else
-       res.send("Файл загружен");
+//---------- из формы-----------//
+router.post('/uploads', upload.none(), async (req, res, next) => {
+   const { zagolovok, keywords, content, price } = req.body;
+   //загрузка файла
+   // let filedata = req.file;
+   // if(!filedata)
+   //     res.send("Ошибка при загрузке файла");
+   // else
+   //     res.send("Файл загружен");
 
    const init = async () => {
-      console.log('запись в модель артикл');    
       const doc = await ArticleModel.create({
-         zagolovok: req.body.zagolovok,
-         keywords: req.body.keywords,
-         article: req.body.content,
-         price: req.body.price
+         zagolovok: zagolovok,
+         keywords: keywords,
+         article: content,
+         price: price
       }); 
    }   
+
    init();
-   console.log(req.body);
+
+   const articles = async () => {
+      const doc = await ArticleModel.find({}); //все статьи
+      console.log('doc:', doc);
+      return doc;
+   };
+
+   articles();
+
+   console.log('запись в роуте forma add в модель артикл');
    console.log('formaddrouter work')
-   // res.json('ok.form up')
 
-   // res.render('formadd', {title: 'Express'});
+   res.json(articles);
+
+  
 });
-
-///////////////////////////////////////////////////////////////
-
-
-// app.post("/upload", function (req, res, next) {
- 
-//    let filedata = req.file;
-//    if(!filedata)
-//        res.send("Ошибка при загрузке файла");
-//    else
-//        res.send("Файл загружен");
-// });
-// //const storage = multer.memoryStorage();
 
 module.exports = router;

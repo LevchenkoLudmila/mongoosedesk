@@ -9,56 +9,10 @@
 </head>
 <body>
    <div class="wrapper">
-      <div class="header">
-         <div class="navbar">
-            <a href="http://localhost:3000/">Главная</a>
-            <a href="http://localhost:3000/form">Создать статью</a>
-            <div class="dropdown">
-              <button class="dropbtn">Категории
-                <i class="fa fa-caret-down"></i>
-              </button>
-              <div class="dropdown-content">
-                <div class="header">
-                  <h2>Выбрать категорию</h2>
-                </div>
-                <div class="row">
-                  <div class="column">
-                    <h3>НЕДВИЖИМОСТЬ</h3>
-                    <a href="#">Аренда</a>
-                    <a href="#">Продажа</a>
-                    <a href="#">Обмен</a>
-                    <a href="#">Ищу компаньона</a>
-                  </div>
-                  <div class="column">
-                    <h3>ХОББИ И ОТДЫХ</h3>
-                    <a href="#">Книги/ журналы</a>
-                    <a href="#">Поиск попутчиков</a>
-                    <a href="#">Билеты</a>
-                    <a href="#">Другое</a>
-                  </div>
-                  <div class="column">
-                    <h3>ЖИВОТНЫЕ</h3>
-                    <a href="#">Животные даром</a>
-                    <a href="#">Другие животные</a>
-                    <a href="#">Зоотовары</a>
-                  </div>
-                  <div class="column">
-                     <h3>Взаиморомощь</h3>
-                  </div>
-               </div>
-              </div>
-            </div>
-          </div>
-         
-         <div class="menu">
-            <div class="logo">
-               <a href="http://localhost:3000/">
-                  <p>Твой каприз</p>
-               </a>
-            </div>
-         </div>
-      </div>
+      <header><%- include('./header') %></header>
+
       <div class="blok">
+
          <div class="article">
             <article class="artic">
                <h2>
@@ -72,28 +26,32 @@
                      Топ рейтинга
                   </button>
                </header>
+
                <div class="conteiner_card_categori">
                   <div class="card cat">
-                        cat<h3>Заголовок</h3>
+                     <h3>Заголовок</h3>
                      <h4>Ключевое слово</h4>
-                     <p>бла бла бла юлаkgkjgkgkgkgkgjhfj kjgjhgjhg kjgjhgjhg
-                     hgkjgjhlhlklkjlkhjhghg kkggkuyftyhgfdsesrgffduy uytyf 
-                     hgfhgfj fjhghfjfdfgu uytdtfyuh ugyftd yyftd yftydtdy
+                     <p>
+                        бла бла бла юлаkgkjgkgkgkgkgjhfj kjgjhgjhg kjgjhgjhg
+                        hgkjgjhlhlklkjlkhjhghg kkggkuyftyhgfdsesrgffduy uytyf 
+                        hgfhgfj fjhghfjfdfgu uytdtfyuh ugyftd yyftd yftydtdy
                      </p>
                   </div>
-                  <div class="card dog">dog</div>
-                  <div class="card bird">bird</div>
-                  <div class="card cat">cat</div>
-                  <div class="card dog">dog</div>
-                  <div class="card dog">dog</div>
+                  <div class="card bird">НЕДВИЖИМОСТЬ</div>
+                  <div class="card hobbi">ХОББИ И ОТДЫХ</div>
+                  <div class="card dog">ЖИВОТНЫЕ</div>
+                  <div class="card dog">ОБМЕН</div>
                </div>
+
                <div>
                   <button class="button button_color_all color_button" data-filter="all">
                      <a href="http://localhost:3000/form">Создать новое обьявление</a>
                   </button>
                </div>
+               
             </article>
          </div>
+
          <div class="cluch_slova">
             <h2>Категории</h2>
             <div class="out">
@@ -114,11 +72,13 @@
                   <button class="button button_color" data-filter="dog">СКИДКИ</button>
                </header>
             </div>
+
          </div>
-         </div>
+
       </div>
 
-      <div class="footer"></div>
+      <footer><%- include ('./footer') %></footer>
+
    </div>
    <script src="./js/main.js"></script>
 </body>

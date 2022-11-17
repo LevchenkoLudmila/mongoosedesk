@@ -3,7 +3,7 @@ body {
    padding: 0;
    font-family: 'Times New Roman', Times, serif;
    color: #f0f8ff;
-   background-color: #acac9bf5;
+   background-color: #f390ac
 }
 a{
    color: #f0f8ff;
@@ -16,19 +16,21 @@ li{
    list-style-type: none;
 }
 .wrapper {
-   max-width: 1200px;
+   max-width: 96vw; /*1200px;*/
 }
 .header {
    width: 100%;
    min-height: 80px;
    display: flex;
    justify-content: space-around;
+   /*flex-wrap: wrap;*/
    align-items: center;
    text-align: center;
-   background-color:#4b1a08;
+   background-color:#5e0b0b;
 }
+
 .logo {
-   background-color: #4b1a08;
+   background-color: #5e0b0b;
    width: 350px;
    height: 36px;
 }
@@ -46,9 +48,12 @@ menu>ul{
    justify-content: space-around;
 }
 menu>a { 
-   display: inline-block;
+   display: block;
    width: 15px;
    height: 50px;
+   text-decoration: none;
+   transition: .5s linear;
+   padding: 1em;
 }
 menu>a:hover {
    background-color: #ff0000;
@@ -59,22 +64,24 @@ menu>a:hover {
    display: flex;
    justify-content: space-around;
 }
+.cluch_slova{
+   max-width: 30%;
+}
 .footer {
    width: 100%;
 }
 .footer{
    width: 100%;
    min-height: 80px;
-   background-color:#4b1a08;
+   background-color:#5e0b0b;
 }
-/* Navbar container */
+
 .navbar {
    overflow: hidden;
-   background-color: #333333;
+   background-color: #5e0b0b;
    font-family: Arial;
  }
  
- /* Links inside the navbar */
  .navbar a {
    float: left;
    font-size: 16px;
@@ -84,7 +91,6 @@ menu>a:hover {
    text-decoration: none;
  }
  
- /* The dropdown container */
  .dropdown {
    float: left;
    overflow: hidden;
@@ -131,8 +137,8 @@ menu>a:hover {
  }
  
  .column {
-   display: flex;
-   justify-content: left;
+   
+   
    width: 33.33%;
    padding: 10px;
    background-color: #cccccc;
@@ -141,7 +147,6 @@ menu>a:hover {
  
  /* Style links внутри columns */
  .column a {
-   float: none;
    color: #000000;
    padding: 16px;
    text-decoration: none;
@@ -161,7 +166,7 @@ menu>a:hover {
    clear: both;
  }*/
  /*открывающееся обьявление*/
- .open_div {
+ /* .open_div {
    background-color: #777777;
    color: #ffffff;
    cursor: pointer;
@@ -171,7 +176,7 @@ menu>a:hover {
    text-align: left;
    outline: none;
    font-size: 15px;
-}
+} */
 
 /* .active, .open_div:hover {
    background-color: #555555;
@@ -184,6 +189,31 @@ menu>a:hover {
    overflow: hidden;
    transition: max-height 0.2s ease-out; 
 }*/
-.cluch_slova{
-   max-width: 30%;
+.button_color_all,
+.button_color {
+   background-color: #ffffff;
+}
+
+/* .button:last-child {
+   margin-right: 0;
+} */
+.conteiner_card_categori {
+   display: flex;
+   flex-wrap: wrap;
+   max-width:  800px;
+   margin: 0 auto;
+   font-size: 0;  
+}
+
+.card {
+   width: 90%;
+   min-height: 100px;
+   /*line-height: 200px;*/
+   font-size: 16px;
+   color: #ffffff;
+   font-weight: bold;
+   margin: 10px;
+   text-align: center;
+   overflow: hidden;
+   transition: 0.5s all;
 }

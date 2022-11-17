@@ -6,15 +6,11 @@ const generalSchema = new Schema({
       type: Schema.Types.String,
       minLength: 2,
    },
-   autorId:  { 
+   autorId: [{ 
       type: Schema.Types.ObjectId,
+      minLength: 2,
       ref: 'autor'
-   },
-   articleId:  { 
-      type: Schema.Types.ObjectId,
-      ref: 'article'
-   },
-
+   }],
 });
 
 const model = mongoose.model('comment', generalSchema);

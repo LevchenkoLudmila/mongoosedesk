@@ -25,19 +25,29 @@ function app() {
 
 app();
 
+//загрузка формы objavaForm
 const zagruzkaform = () =>{
 const formEl = document.forms.objavaForm;
-   console.log(formEl);
+   // console.log(formEl);
 
 formEl.addEventListener('submit', async (ev) => {
    ev.preventDefault();
    const formData = new FormData(ev.target);
-   console.log(ev.target);
-//    formdata.append("name", name);
-   const { data } = await axios.post('/uploads', formData);
+   
+   const { data } = await axios.post('/formadd/uploads', formData);
+   console.log('data objavaForm front:', data);
 })
-const elContent = document.querySelector('.');
-}
+//const elContent = document.querySelector('.');
+};
+
+
+// const articles = async () => {
+//    const { data } = await axios.post('/formadd/uploads'); //все статьи
+//    console.log('data', data);
+//    return data;
+// };
+
+// articles();
 // // сброс значений формы
 // const btnFormReset = document.getElementsByName("reset");
 // console.log(btnFormReset);
@@ -45,3 +55,17 @@ const elContent = document.querySelector('.');
 //    ev.preventDefault();
 //    reset();
 // }); 
+
+//счетчик лайков
+const dislike = document.querySelector();
+const like = document.querySelector();
+dislike.addEventListener('click', (event) => {
+   if (event.target.dataset.counter != undefined) { // если есть атрибут...
+     event.target.value++;
+   }
+ });
+like.addEventListener('click', (event) => {
+   if (event.target.dataset.counter != undefined) { // если есть атрибут...
+     event.target.value++;
+   }
+ });

@@ -22,7 +22,6 @@ const generalSchema = new Schema({
    },
    price: { 
       type: Schema.Types.Number,
-      min: 1,
    },
    createAt: {
       type: Schema.Types.Date,

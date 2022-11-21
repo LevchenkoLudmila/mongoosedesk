@@ -3,6 +3,8 @@
 //    const buttons = document.querySelectorAll('.button');
 //    const cards = document.querySelectorAll('.card');
 
+// const { name } = require("ejs");
+
 //    function filter (category, items) {
 //       items.forEach((item) => {
 //          const isItemFiltered = !item.classList.contains(category);
@@ -27,28 +29,89 @@
 
 //-------загрузка формы objavaForm
 
-const zagruzka = async () =>{
+// const zagruzka = async () =>{
+///
+
+
+// if(!localStorage.getItem('.')){
+//    localStorage.setItem('', JSON.stringify([]))
+// }
+//const btnAdd = document.querySelector('button.add-new');
+// btnAdd.addEventListener('clic', (el) => {
+//    const name = document.querySelector('.gn').value;
+//    const price = document.querySelector('.gp').value;
+//    const count = document.querySelector('.gc').value;
+// });
+// if (name && price && count){
+//    const name = document.querySelector('.gn').value = '';
+//    const price = document.querySelector('.gp').value = '';
+//    const count = document.querySelector('.gc').value = '';
+//    let goods = JSON.parse(localStorage.getItem(goods));
+// }
+//
 const formEl = document.forms.objavaForm;
-   // console.log(formEl);
+const findform = document.querySelector('.form');
 
 formEl.addEventListener('submit', async (ev) => {
    ev.preventDefault();
    const formData = new FormData(ev.target);
    
    const { data } = await axios.post('/uploads', formData);
-   console.log('data objavaForm front:', data);
-})
-//const elContent = document.querySelector('.');
-};
+   findform.classList.add('hidden');
+   elContent.classList.remove('hidden');
+   // const html =`<div>
+   //                <p>${data[0].zagolovok}</p>
+   //                <p> ${data[0].keywords}</p> 
+   //                <p>${data[0].article}</p> 
+   //                <p>${data[0].price}</p>
+   //             </div>`
+   // elContent.innerHTML = html;
+});
+
+const elContent = document.querySelector('.out-article');
+// };
+
+// console.log(data);
+// data forEach(item => {
+//    const card = document.createElement('div');
+//    card.classList.add('card');
+
+//    card.innerHTML = `
+//       <img src="${item.photo}" alt="">
+//       <div class="sex">
+//          <img src="${icons/MediaStream.png}" alt="male">
+//       </div>
+//       <div class="age">${item.age}</div>
+//       `;
+//       document.querySelector(.).appendChild(card);
+// });
+// else{}
+
+// const statiya = document.querySelector('.statiya');
+// const articles = async () => {
+//    const { data } = await axios.post('/article'); //все статьи из бд
+//    //console.log('data articlesfront:', data);
+//    return data;
+// };
+
+// const cardout = async() =>{
+//    const allstatii = await articles();
+//    console.log('allstatii:', allstatii);
+//    const statiyacard = allstatii.reduce((acc, item) => {
+//       console.log('item:', item);
+   //    acc += `<div class="sttatya">
+   //                <h3>${item.zagolovok}</h3>
+   //                <h4>${item.keywords}</h4>
+   //                <p>${item.article}</p>
+   //                <p>${item.price}</p>
+   //             </div>`
+   //    return acc;
+   // }, '' );
+   // statiya.innerHTML = statiyacard;
+// };
+// cardout();
 
 
-const articles = async () => {
-   const { data } = await axios.post('/articless'); //все статьи
-   console.log('data articlesfront:', data);
-   return data;
-};
-
-articles();
 // const articles = async () => {
 //    const { data } = await axios.post('/formadd/uploads'); //все статьи
 //    console.log('data', data);
@@ -56,24 +119,24 @@ articles();
 // };
 
 // articles();
+
 // // сброс значений формы
-// const btnFormReset = document.getElementsByName("reset");
-// console.log(btnFormReset);
-// btnFormReset.addEventListener('click',(ev) => {
-//    ev.preventDefault();
-//    reset();
-// }); 
+const btnFormReset = document.getElementsByName("btnreset_objavaForm");
+btnFormReset.addEventListener ('click', (ev) => {
+   ev.preventDefault();
+   btnFormReset.reset();
+}); 
 
 //счетчик лайков
-// const dislike = document.querySelector();
-// const like = document.querySelector();
-// dislike.addEventListener('click', (event) => {
-//    if (event.target.dataset.counter != undefined) { // если есть атрибут...
-//      event.target.value++;
-//    }
-//  });
-// like.addEventListener('click', (event) => {
-//    if (event.target.dataset.counter != undefined) { // если есть атрибут...
-//      event.target.value++;
-//    }
-//  });
+const dislike = document.querySelector('.dislike');
+const like = document.querySelector('.like');
+dislike.addEventListener ('click', (event) => {
+   if (event.target.dataset.counter != undefined) { // если есть атрибут...
+     event.target.value++;
+   }
+ });
+like.addEventListener('click', (event) => {
+   if (event.target.dataset.counter != undefined) { // если есть атрибут...
+     event.target.value++;
+   }
+ });

@@ -22,27 +22,20 @@
                </header>
 
                <div class="conteiner_card_categori">
-                  <div class="card cat">
-                     <h3>Заголовок</h3>
-                     <h4>Ключевое слово</h4>
-                     <p>
-                        бла бла бла юлаkgkjgkgkgkgkgjhfj kjgjhgjhg kjgjhgjhg
-                        hgkjgjhlhlklkjlkhjhghg kkggkuyftyhgfdsesrgffduy uytyf 
-                        hgfhgfj fjhghfjfdfgu uytdtfyuh ugyftd yyftd yftydtdy
-                     </p>
-                  </div>
-                  <div class="card bird">НЕДВИЖИМОСТЬ</div>
-                  <div class="card hobbi">ХОББИ И ОТДЫХ</div>
-                  <div class="card dog">ЖИВОТНЫЕ</div>
-                  <div class="card dog">ОБМЕН</div>
-               </div>
 
-               <div>
-                  <button class="button button_color_all color_button" data-filter="all">
-                     <a href="http://localhost:3000/form">Создать новое обьявление</a>
-                  </button>
+                  <div class="statiya"></div>
+                  <% for(let i=0; i < doc.length; i++){ %>
+                  <div class="card cat">
+                     <h3><%= doc[i].zagolovok %></h3>
+                     <h4><%= doc[i].keywords %></h4>
+                     <p>
+                        <%= doc[i].article %>
+                     </p>
+                     <a href="/article/<%= doc[i].id %>">Посмотреть</a>
+                     
+                  </div>
+                  <% } %>
                </div>
-               
             </article>
          </div>
 

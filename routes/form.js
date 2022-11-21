@@ -14,7 +14,8 @@ const storage = multer.diskStorage({
       cb(null, file.originalname + '-' + Date.now());
    }
 });
-
+//const uploadImage = upload.single('image');
+// app.use(multer({storage:storageConfig}).single("filedata"));
 //фильтр для мультера
 const fileFilter = (req, file, cb) => {
   
@@ -28,9 +29,6 @@ const fileFilter = (req, file, cb) => {
    }
 };
 
-//const uploadImage = upload.single('image');
-// app.use(multer({storage:storageConfig}).single("filedata"));
-
 //---------аплоад мультера------//
 const upload = multer({ storage: storage, limits: { fileSize: 1024 * 1024 * 5}, fileFilter: fileFilter });
 
@@ -41,29 +39,42 @@ router.get('/form', (req, res) => {
 });
 
 //---------- из формы-----------//
+//  router.post('/articlfind', async (req, res, next) => {
+   
+//    const { zagolovok, keywords, content, price } = req.body;
+
+//    const init = async () => {
+//       const doc = await ArticleModel.create({
+//          zagolovok: zagolovok,
+//          keywords: keywords,
+//          article: content,
+//          price: price,
+//       }); 
+//    }   
+   
+//    init();
+
+// });
+
 router.post('/uploads', upload.none(), async (req, res, next) => {
    
-   //const { zagolovok, keywords, content, price } = req.body;
+   const { zagolovok, keywords, content, price } = req.body;
 
-   // const init = async () => {
-   //    const doc = await ArticleModel.create({
-   //       zagolovok: zagolovok,
-   //       keywords: keywords,
-   //       article: content,
-   //       price: price,
-   //    }); 
-   // }   
-   // init();
+   const init = async () => {
+      const doc = await ArticleModel.create({
+         zagolovok: zagolovok,
+         keywords: keywords,
+         article: content,
+         price: price,
+      }); 
+   }   
    
-   console.log('запись в роуте forma add в модель артикл');
-   console.log('formaddrouter work');
+   init();
    
-});
-
-router.post('articles', async(req,res) =>{
-   const doc = await ArticleModel.find({zagolovok: 'Недвижимость'}).exe(); //все статьи
-   console.log('doc:', doc);
+   const doc = await ArticleModel.find({zagolovok: zagolovok}); //все статьи
+   //console.log('doc:', doc);
    res.json(doc);
-})
+   // res.render('form', doc);
+});
 
 module.exports = router;

@@ -5,54 +5,24 @@ const AutorModel = require('../models/autor');
 const ImageModel = require('../models/image');
 const ArticleModel = require('../models/article');
 
-router.get('/articles', (req, res) => {
-   res.render('articles');
+
+router.get('/article/:id', async(req, res) => {
+   const { id } = req.params;
+   // console.log('type id:',typeof id);
+   // console.log("idllll:", id);
+   const article = await ArticleModel.findById(id);
+   console.log('find by id:', article);
+   const vars = {
+      zagolovok: article.zagolovok,
+      keywords: article.keywords,
+      article: article.article,
+      price: article.price,
+   };
+   res.render('article', {vars: vars});
 });
-
-// router.post('/article', async(req, res) => {
-
-//    const articles = async () => {
-//       const doc = await ArticleModel.find({}); //все статьи
-//       console.log('doc:', doc);
-//       return doc;
-//    };
-
-//    articles();
-
-   
-
-//    res.render('article',  {articles: articles});
+// router.get('/article', (req, res) => {
+//    res.render('article');
 // });
-// ---------для фото-------//
-// router.get('/upload', (req, res) => {
-//    imgModel.find({}, (err, items) => {
-//        if (err) {
-//           console.log(err);
-//           res.status(500).send('An error occurred', err);
-//        }
-//        else {
-//           res.render('index', { items: items });
-//        }
-//    });
-// });
-// app.post('/upload', upload.single('previw'), (req, res, next) => {
-//    const { name, desc } = req.body
-//    const obj = {
-//        name: name,
-//        desc: desc,
-//        img: {
-//            data: fs.readFileSync(path.join(__dirname + '/uploads/' + req.file.filename)),
-//            contentType: 'image/png'
-//        }
-//    }
-//    imgModel.create(obj, (err, item) => {
-//        if (err) {
-//            console.log(err);
-//        }
-//        else {
-//            // item.save();
-//            res.redirect('/');
-//        }
-//    });
-// });
+
+
 module.exports = router;

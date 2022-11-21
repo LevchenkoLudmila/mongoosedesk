@@ -1,19 +1,26 @@
 const express = require('express');
 const router = express.Router();
+const db = require('../bd/bd');
+const multer  = require("multer");
 const ArticleModel = require('../models/article');
 
 
 router.get('/', async (req, res) => {
    // const articles = await ArticleModel.find({});
-   res.render('index');
-   
+   const doc = await ArticleModel.find({}); //все статьи
+   // console.log(doc);
+   res.render('index', {doc: doc});
+
 });
 
-router.post('/', (req, res, next) => {
-   
-}); 
+router.get('/:id');
 
+router.post('/article', async(req, res) => {
 
+   const doc = await ArticleModel.find({}); //все статьи
+   // console.log('doc:', doc);
+   res.json(doc);
+});
 
 // server.post('/', async (req, res) => {
 //    const bookList = await BookModel.find({},).populate('ganre');

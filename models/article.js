@@ -4,15 +4,15 @@ const { Schema } = mongoose;
 const generalSchema = new Schema({
    zagolovok: { 
       type: Schema.Types.String,
-      minLength: 3,
+      minLength: 2,
    },
    keywords: { 
       type: Schema.Types.String,
-      minLength: 3,
+      minLength: 2,
    },
    article: { 
       type: Schema.Types.String,
-      minLength: 5,
+      minLength: 2,
    },
    rating: { 
       type: Schema.Types.Number,

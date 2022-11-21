@@ -7,29 +7,24 @@
       <div class="blok">
          <h1>Объявления</h1>
          <div class="wrapper-card">
-            <div>
-               <h2>Заголовок</h2>
-               <h2>Ключевое слово</h2>
-               <p>Котент 
-                  Lorem ipsum dolor sit amet, consectetur 
-                  dipisicing elit, sed do eiusmod tempor 
-                  incididunt ut labore et dolore magna aliqua.
-                   Ut enim ad minim veniam, quis nostrud 
-                   exercitation ullamco laboris nisi ut 
-                   aliquip ex ea commodo consequat.
+            <div class="jj">
+               <h2><%= vars.zagolovok %></h2>
+               <h2><%= vars.keywords %></h2>
+               <p>
+                  <%= vars.article %>
                </p>
             </div>
-            <div class="card-write">
+            <div class="card-write ">
                <h4>
                   Aвтор
                </h4>
                <div>
-                  Стоимость
+                  Стоимость<%= vars.price %>
                </div>
                <div class="card-reiting">
                   <label>Рейтинг 
-                     Не нравится: <input type="button" value="1" data-counter>
-                     Нравится: <input type="button" value="2" data-counter>
+                     Не нравится: <input class="dislike" type="button" value="1" data-counter>
+                     Нравится: <input class="like" type="button" value="1" data-counter>
                   </label>
                </div>
                <div>
